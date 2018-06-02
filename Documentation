@@ -31,3 +31,33 @@ Now insert data into table:
 
 3rd rules:
 =>Article.create(title: "Third article", description: "Third description")
+
+
+Now Update data into table:
+=>article = Article.find(3)
+=>article.title = "Third edited Article"
+=>article.save
+=>Article.all
+
+
+
+Now Delete data into table:
+=>article = Article.find(3)
+=>article.destroy
+=>Article.all
+
+
+
+
+For Validation Now added this code in models>article.rb:
+
+validates :title, presence: true, length:{minimun:4, maximum:40}
+validates :description, presence: true, length:{minimun:20, maximum:500}
+
+
+
+
+TO check for any error in console:
+=>article.errors.any?
+=>article.errors.full_messages
+
