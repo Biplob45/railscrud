@@ -1,0 +1,33 @@
+
+
+
+
+2.Create a table:
+=>rails g migration create_articles
+
+and added this code in create_articles.rb:
+t.string "title"
+t.text "description"
+
+
+Now,
+=>rake db:migrate
+
+Create a model name article.rb
+
+
+Now insert data into table:
+1st rules:
+=>rails console
+=>article = Article.new
+=>article.title = "First Title"
+=>article.description = "First Description"
+=>article.save
+=>Article.all
+
+2nd rules:
+=>article = Article.new(title:"Second Title", description:"Second Description")
+=>article.save
+
+3rd rules:
+=>Article.create(title: "Third article", description: "Third description")
