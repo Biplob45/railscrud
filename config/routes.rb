@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get 'page/about', to:'page#about'
 
+  resources :articles
+
 end
